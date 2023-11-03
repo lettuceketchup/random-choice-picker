@@ -4,6 +4,7 @@ const choiceInput = document.querySelector('#choice-input');
 choiceInput.focus();
 
 choiceInput.addEventListener('keyup', (e) => {
+    e.target.value = e.target.value.replace(/\n+/g, '');
     createTags(e.target.value);
 
     if(e.key === 'Enter') {

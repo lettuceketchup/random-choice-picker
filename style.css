@@ -3,8 +3,9 @@
 }
 
 body {
-    background-color: rgb(6, 70, 92);
-    font-family: 'Roboto', sans-serif;
+    background-color: #828282;
+    background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
+    font-family: "Roboto", sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,24 +15,57 @@ body {
     margin: 0;
 }
 
-h3 {
-    color: #fff;
-    margin: .5em 0 1em;
+#tooltip {
+    background-color: #49c5ff;
+    background-image: url("https://www.transparenttextures.com/patterns/tactile-noise-dark.png");
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    font-size: 0.8em;
+    padding: 1px;
+    margin: 1em auto;
+    color: #dbdbdb;
     text-align: center;
+    opacity: 0;
+    animation: showAndHide 4s ease-in-out;
+    transition: opacity 0.5s;
+}
+
+@keyframes showAndHide {
+    0% {
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#tooltip:hover {
+    opacity: 1;
+    transition: opacity 0.25s;
 }
 
 .container {
-    width: 500px;
+    min-width: 40%;
+    resize: both;
 }
 
 #choice-input {
+    background-color: #c2c2c2;
+    background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
     border: none;
     display: block;
     width: 100%;
-    height: 6em;
+    min-height: 6em;
     font-family: inherit;
     padding: 0.5em;
-    margin: 0 0 1em;
+    margin: .5em auto;
     font-size: 1em;
 }
 
@@ -40,14 +74,17 @@ h3 {
 }
 
 .tag {
-    background-color:darkcyan ;
+    background-color: #c72924;
+    background-image: url("https://www.transparenttextures.com/patterns/dark-brick-wall.png");
     color: white;
-    border-radius: 2em;
-    padding: .5em 1em;
-    margin: 0 .15em .3em 0;
+    border-radius: 0.25em;
+    border: rgb(40, 40, 40) 2px solid;
+    padding: 0.5em 1em;
+    margin: 0 0.15em 0.3em 0;
     display: inline-block;
 }
 
 .tag.highlight {
     background-color: rgb(27, 182, 102);
+    font-style: italic;
 }
