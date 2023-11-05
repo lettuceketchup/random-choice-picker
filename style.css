@@ -6,7 +6,7 @@ body {
     background-color: #828282;
     background-image: url("https://www.transparenttextures.com/patterns/concrete-wall-3.png");
     font-family: "Roboto", sans-serif;
-    height: 100vh;
+    height: 100svh;
     overflow: hidden;
     margin: 0;
 }
@@ -38,14 +38,18 @@ body {
 #tooltip {
     background-color: #49c5ff;
     background-image: url("https://www.transparenttextures.com/patterns/tactile-noise-dark.png");
+    border: 1px solid #49c5ff;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     border-radius: 2px;
-    font-size: .8em;
+    font-size: 1em;
     width: 100%;
-    padding: 0 1em;
+    padding: 1em;
     margin: 1em auto;
     color: #dbdbdb;
-    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
     opacity: 0;
     animation: showAndHide 4s ease-in-out;
     transition: opacity 0.5s;
@@ -69,6 +73,18 @@ body {
 #tooltip:hover {
     opacity: 1;
     transition: opacity 0.25s;
+}
+
+#tooltip span {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    font-weight: bold;
+    padding: .1em;
+}
+
+#tooltip span svg {
+    margin: auto .2em;
 }
 
 #program {
@@ -109,6 +125,7 @@ body {
 #input-area {
     background-color: #c2c2c2;
     background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+    border: 1px solid #d2d1d1;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     border: none;
     display: block;
@@ -124,6 +141,7 @@ body {
 button {
     background-color: #c2c2c2;
     background-image: url("https://www.transparenttextures.com/patterns/clean-textile.png");
+    border: 1px solid #d2d1d1;
     box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
     border: none;
     display: block;

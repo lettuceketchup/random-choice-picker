@@ -76,7 +76,6 @@ let dropdownMenuPresent = false;
 body.addEventListener("click", (e) => {
     // Remove the dropdown menu
     const dropdownContent = document.querySelector(".dropdown-content");
-    console.log(e.target);
     if (dropdownContent 
         && dropdownMenuPresent 
         && !hasSomeParentTheClass(e.target, "delimiter-select")
@@ -107,8 +106,7 @@ const createTags = () => {
     const tags = 
         inputArea.value
         .split(selectedDelimiter.character)
-        .map((tag) => tag.trim())
-        .filter((s) => s);
+        .filter((s) => /^\s*$/.test(s) === false);
     tagsEl.innerHTML = "";
 
     tags.forEach((tag) => {
@@ -119,7 +117,7 @@ const createTags = () => {
     });
 };
 
-
+// Create the dropdown menu
 const createDropdownMenu = () => {
     const dropdown = document.querySelector(".dropdown");
     const dropdownContent = document.createElement("div");
